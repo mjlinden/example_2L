@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1>My Lucky number: {{ number }}</h1>
+        {% for day in days %}
+            <h4>{{ day }}</h4>
+        {% endfor %}
+        <div class="container text-center">
+            <div class="row">
+                <div class="col">
+                    <img class="img-fluid" src="{{ asset('img/mondriaan.jpg') }}">
+                </div>
+                <div class="col">
+                    <img class="img-fluid" src="{{ asset('img/mondriaan.jpg') }}">
+                </div>
+                <div class="col">
+                    <img class="img-fluid" src="{{ asset('img/mondriaan.jpg') }}">
+                </div>
+            </div>
+        </div>
+
+        <a href="{{ path('goede_morgen') }}">Ga naar Goedemorgen</a>
+    </div>
+{% endblock %}

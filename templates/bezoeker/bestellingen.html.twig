@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1>aantal klanten: {{ klanten|length }}</h1>
+
+        {% for klant in klanten %}
+            <h4> {{ klant.naam }}</h4>
+
+            {% for bestelling in klant.bestellings %}
+                <h4>Bestelling: {{ bestelling.datum|date('d-m-Y') }}</h4>
+
+                {% for bestelregel in bestelling.bestelregels %}
+                    <h5>{{ bestelregel.pizza.naam }} ({{ bestelregel.aantal }}x)</h5>
+                {% endfor %}
+
+            {%  endfor %}
+        {% endfor %}
+    </div>
+{% endblock %}

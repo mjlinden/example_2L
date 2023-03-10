@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1> Lucky number {{ number }}</h1>
+
+    {% for dag in dagen %}
+        <h4>{{ dag }}</h4>
+    {% endfor %}
+    <h1>aantal dagen {{ dagen|length }}</h1>
+    <img src="{{ asset('img/mondriaan.jpg') }}" class="img-fluid" alt="Responsive image">
+    <a href="{{ path('app_lucky_number')}}">ga naar lucky number</a>
+{% endblock %}
